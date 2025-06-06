@@ -201,12 +201,12 @@ elif st.session_state.page == 'quiz':
     st.title(f"Quiz: {st.session_state.selected_course}")
     for i, q in enumerate(st.session_state.quiz_questions):
         st.write(f"**{i+1}. {q['question']}**")
-       st.session_state.quiz_answers[i] = st.radio(
-    f"Question {i+1}",
-    q["options"],
-    index=None,
-    key=f"q{i}"
-)
+        st.session_state.quiz_answers[i] = st.radio(
+            f"Question {i+1}",
+            q["options"],
+            index=None,               # 👈 this is the part we added
+            key=f"q{i}"
+        )
     if st.button("Submit Answers"):
         submit_quiz()
 
