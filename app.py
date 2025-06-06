@@ -10,18 +10,8 @@ st.set_page_config(
     layout="centered"
 )
 
-# Display Centered Logo
-st.markdown(
-    """
-    <div style="text-align: center;">
-        <img src="images/logo.png" alt="Valkyrie Security Solutions Logo" width="300">
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-
-# Add Spacing Below Logo
-st.markdown("<br><br>", unsafe_allow_html=True)
+# Display Logo (original working way — left aligned)
+st.image('images/logo.png', width=300)
 
 # Session State Initialization
 if 'page' not in st.session_state:
