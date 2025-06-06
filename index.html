@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VSS Training Portal</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>VSS Training Portal</h1>
+    <p>Professional Training | Valkyrie Security Solutions</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#modules">Modules</a>
+    <a href="#dashboard">Dashboard</a>
+  </nav>
+
+  <div class="content" id="home">
+    <h2>Welcome to VSS Training</h2>
+    <p>Choose a training module below to begin your learning journey.</p>
+  </div>
+
+  <div class="content" id="modules">
+    <div class="module">
+      <h2>Stop the Bleed</h2>
+      <p>Learn lifesaving bleeding control techniques that can be applied in emergency situations.</p>
+      <a class="start-button" href="#" onclick="startModule('stopTheBleed')">Start Training</a>
+    </div>
+
+    <div class="module">
+      <h2>Active Assailant Training: Run, Hide, Fight</h2>
+      <p>Master the essentials of surviving an active assailant incident through proactive strategies and response techniques.</p>
+      <a class="start-button" href="#" onclick="startModule('runHideFight')">Start Training</a>
+    </div>
+  </div>
+
+  <div class="content" id="dashboard">
+    <h2>Dashboard</h2>
+    <div id="progress"></div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Valkyrie Security Solutions | All Rights Reserved</p>
+  </footer>
+</body>
+</html>
