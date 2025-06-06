@@ -6,8 +6,7 @@ from datetime import date
 # Page Config
 st.set_page_config(
     page_title="VSS Training App", 
-    page_icon="🛡️", 
-    layout="centered"
+       layout="centered"
 )
 
 # Display Logo
