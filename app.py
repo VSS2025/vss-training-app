@@ -22,7 +22,6 @@ st.markdown(
 
 # Add Spacing Below Logo
 st.markdown("<br><br>", unsafe_allow_html=True)
-)
 
 # Session State Initialization
 if 'page' not in st.session_state:
