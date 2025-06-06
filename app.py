@@ -14,7 +14,8 @@ st.set_page_config(
 st.image('images/logo.png', width=300)
 
 # Add spacing below logo
-st.markdown("<br><br>", unsafe_allow_html=True)
+st.markdown("<br><br><br><br>", unsafe_allow_html=True)
+
 # Session State Initialization
 if 'page' not in st.session_state:
     st.session_state.page = 'home'
