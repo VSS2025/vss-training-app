@@ -12,7 +12,7 @@ This app is designed to train users on:
 
 1. **Clone or Download** this repository to your local computer.
 2. **Open `index.html`** in your browser.
-3. ✅ Done! It will work offline.
+3. ✅ Done! It will work offline. 
 
 ---
 
