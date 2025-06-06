@@ -4,13 +4,13 @@ const modules = {
     title: "Stop the Bleed",
     progress: 0,
     lessons: [
-      "Lesson 1: Recognizing life-threatening bleeding.",
-      "Lesson 2: Applying pressure with hands.",
-      "Lesson 3: Using tourniquets effectively.",
-      "Lesson 4: Wound packing with gauze or clean cloth.",
-      "Lesson 5: Prioritizing safety while administering aid.",
-      "Lesson 6: Monitoring the victim after control.",
-      "Lesson 7: Transitioning care to EMS professionals."
+      "Recognizing life-threatening bleeding.",
+      "Applying pressure with hands.",
+      "Using tourniquets effectively.",
+      "Wound packing with gauze or clean cloth.",
+      "Prioritizing safety while administering aid.",
+      "Monitoring the victim after control.",
+      "Transitioning care to EMS professionals."
     ],
     questions: [
       { question: "What is the first action to control life-threatening bleeding?", answers: ["Apply a tourniquet", "Recognize bleeding", "Pack wound"], correct: "Recognize bleeding" },
@@ -29,13 +29,13 @@ const modules = {
     title: "Active Assailant: Run, Hide, Fight",
     progress: 0,
     lessons: [
-      "Lesson 1: Develop situational awareness.",
-      "Lesson 2: Identify exits and escape routes.",
-      "Lesson 3: Hiding effectively and barricading.",
-      "Lesson 4: Silencing devices and staying hidden.",
-      "Lesson 5: Fighting back as a last resort.",
-      "Lesson 6: Working as a group to survive.",
-      "Lesson 7: Reporting accurately to authorities."
+      "Develop situational awareness.",
+      "Identify exits and escape routes.",
+      "Hide effectively and barricade.",
+      "Silence devices and stay hidden.",
+      "Fight back as a last resort.",
+      "Work as a group to survive.",
+      "Report accurately to authorities."
     ],
     questions: [
       { question: "What is the first step if you hear gunfire?", answers: ["Run if safe", "Hide immediately", "Fight"], correct: "Run if safe" },
@@ -52,7 +52,7 @@ const modules = {
   }
 };
 
-// Helper to shuffle array
+// Shuffle helper
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -61,12 +61,12 @@ function shuffle(array) {
   return array;
 }
 
-// Launch module
+// Launch module (show lessons first)
 function startModule(moduleKey) {
   const module = modules[moduleKey];
   if (!module) return;
 
-  let content = `<h2>${module.title}</h2><ol>`;
+  let content = `<h2>${module.title} - Lessons</h2><ol>`;
   module.lessons.forEach(lesson => {
     content += `<li>${lesson}</li>`;
   });
@@ -75,13 +75,12 @@ function startModule(moduleKey) {
   document.getElementById('modules').innerHTML = content;
 }
 
-// Start Quiz
+// Start quiz (after lessons)
 function startQuiz(moduleKey) {
   const module = modules[moduleKey];
   if (!module) return;
 
-  const questionsPool = shuffle([...module.questions]).slice(0, 5); // 5 questions for demo
-  let score = 0;
+  const questionsPool = shuffle([...module.questions]).slice(0, 5); // 5 random questions
   let quizContent = `<h2>${module.title} Quiz</h2>`;
 
   questionsPool.forEach((q, index) => {
@@ -98,7 +97,7 @@ function startQuiz(moduleKey) {
   document.getElementById('modules').innerHTML = quizContent;
 }
 
-// Submit Quiz
+// Submit quiz
 function submitQuiz(moduleKey, questionsPool) {
   let score = 0;
 
@@ -112,12 +111,14 @@ function submitQuiz(moduleKey, questionsPool) {
   const percentage = (score / questionsPool.length) * 100;
   if (percentage >= 80) {
     alert(`Congratulations! You passed with ${percentage}%!`);
+    modules[moduleKey].progress = 100;
+    localStorage.setItem(moduleKey, "completed");
   } else {
-    alert(`You scored ${percentage}%. Try again!`);
+    alert(`You scored ${percentage}%. Please try again.`);
+    modules[moduleKey].progress = percentage;
+    localStorage.setItem(moduleKey, "incomplete");
   }
 
-  modules[moduleKey].progress = percentage;
-  localStorage.setItem(moduleKey, percentage);
   renderDashboard();
 }
 
@@ -129,7 +130,13 @@ function renderDashboard() {
   Object.keys(modules).forEach((key) => {
     const module = modules[key];
     const storedProgress = localStorage.getItem(key);
-    const status = storedProgress >= 80 ? "Completed" : storedProgress > 0 ? "In Progress" : "Not Started";
+    let status = "Not Started";
+
+    if (storedProgress === "completed") {
+      status = "Completed";
+    } else if (storedProgress === "incomplete") {
+      status = "In Progress";
+    }
 
     const moduleStatus = document.createElement("div");
     moduleStatus.innerHTML = `
@@ -141,7 +148,7 @@ function renderDashboard() {
   });
 }
 
-// On page load
+// Load dashboard on page load
 window.onload = function () {
   renderDashboard();
 };
