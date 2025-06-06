@@ -1,6 +1,6 @@
 [theme]
-primaryColor="#FFD700"
-backgroundColor="#0D1B2A"
-secondaryBackgroundColor="#1B263B"
-textColor="#FFD700"
+primaryColor="#C19A6B"              # Gold (for buttons, highlights)
+backgroundColor="#0B1A2A"           # Deep, Dark Blue (main background)
+secondaryBackgroundColor="#13293D"  # Slightly lighter blue for sidebars/cards
+textColor="#F5DEB3"                 # Light Wheat/Gold Text
 font="sans serif"
