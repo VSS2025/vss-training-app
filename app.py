@@ -4,7 +4,8 @@ from fpdf import FPDF
 from datetime import date
 
 # Page Config
-st.set_page_config(page_title="VSS Training App", page_icon="🛡️", layout="centered")
+st.set_page_config(page_title="VSS Training App", layout="centered")
+st.image('images/logo.png', width=300)
 
 # Session State Initialization
 if 'page' not in st.session_state:
