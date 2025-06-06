@@ -6,12 +6,12 @@ from datetime import date
 # Page Config
 st.set_page_config(
     page_title="VSS Training App", 
+    page_icon="🛡️", 
     layout="centered"
 )
 
 # Display Logo
 st.image('images/logo.png', width=300)  # 👈 This is the line you add
-
 
 # Session State Initialization
 if 'page' not in st.session_state:
