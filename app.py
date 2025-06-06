@@ -179,7 +179,7 @@ def restart():
 
 # Page Handling
 if st.session_state.page == 'home':
-    st.title("🛡️ Valkyrie Security Solutions Training")
+    st.title(" Valkyrie Security Solutions Training")
     st.header("Choose a Course:")
     for course_name in courses.keys():
         if st.button(f"Start {course_name}"):
