@@ -1,0 +1,79 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+}
+
+header {
+  background-color: #00274d; /* VSS Navy Blue */
+  color: #ffcc00; /* VSS Gold */
+  padding: 20px;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #001f3f;
+}
+
+nav a {
+  color: #ffcc00;
+  padding: 14px 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  background-color: #003366;
+}
+
+.content {
+  padding: 40px;
+  text-align: center;
+}
+
+.module {
+  background-color: #fff;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 600px;
+  border: 2px solid #00274d;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.module h2 {
+  color: #00274d;
+}
+
+.start-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ffcc00;
+  color: #00274d;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.start-button:hover {
+  background-color: #e6b800;
+}
+
+#progress {
+  margin-top: 20px;
+}
+
+footer {
+  background-color: #00274d;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
