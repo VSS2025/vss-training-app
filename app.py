@@ -11,7 +11,14 @@ st.set_page_config(
 )
 
 # Display Logo
-st.image('images/logo.png', width=300)  # 👈 This is the line you add
+st.markdown(
+    """
+    <div style="text-align: center;">
+        <img src="images/logo.png" alt="Valkyrie Security Solutions Logo" width="300">
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
 # Session State Initialization
 if 'page' not in st.session_state:
