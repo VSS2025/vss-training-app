@@ -10,7 +10,7 @@ st.set_page_config(
     layout="centered"
 )
 
-# Display Logo
+# Display Centered Logo
 st.markdown(
     """
     <div style="text-align: center;">
@@ -18,6 +18,10 @@ st.markdown(
     </div>
     """,
     unsafe_allow_html=True
+)
+
+# Add Spacing Below Logo
+st.markdown("<br><br>", unsafe_allow_html=True)
 )
 
 # Session State Initialization
